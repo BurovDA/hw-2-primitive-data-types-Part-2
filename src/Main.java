@@ -5,17 +5,14 @@ public class Main {
         int firstDeposit = 1250; // Сумма депозита
         int totalAmount = (initialAccount + firstDeposit);
         System.out.println("Сумма на счете после внесения депозита " + totalAmount);
-        boolean accruals = true;
-
-        int criteria;
-        if (accruals) {
-            criteria = 100;
+        int bonusAmount = 100;
+        int bonus;
+        if (firstDeposit > 1000) {
+            bonus = (firstDeposit / bonusAmount);
         } else {
-            criteria = 0;
+            bonus = 0;
         }
-        int bonus = (firstDeposit / criteria);
         System.out.println("Количество начисленных бонусов " + bonus);
-
         int finalAmount = (bonus + totalAmount);
         System.out.println("Итоговая сумма на счете " + finalAmount);
     }
